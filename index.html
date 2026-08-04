@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A4 Printable Hello World | Pixel-Perfect Paper Generator</title>
+  <title>NAIMUR RAHMAN - Textile Engineering Graduate CV</title>
   
   <!-- Bootstrap 5.3 CDN CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
@@ -13,62 +13,306 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- Custom CSS3 Stylesheet -->
+  <!-- Custom CV Stylesheet -->
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
 
-  <!-- Pure A4 Page Viewport Layout -->
+  <!-- Single A4 Printable Page Container -->
   <main class="workspace-stage">
-    
-    <!-- Scale Wrapper for A4 Page -->
     <div id="pageScaleWrapper" class="page-scale-wrapper">
       
-      <!-- A4 Page Container -->
-      <div id="a4Page" class="a4-page font-serif size-md">
+      <!-- A4 Sheet Container (210mm x 297mm) -->
+      <div id="a4Page" class="a4-page">
         
-        <!-- Watermark Overlay -->
-        <div id="printWatermark" class="watermark-overlay" style="display: none;">DRAFT</div>
-
-        <!-- Printable Header -->
-        <div class="print-header">
-          <div class="print-brand-title"><i class="bi bi-globe2 me-1"></i> Hello World • Printable A4</div>
-        </div>
-
-        <!-- Main Printable Content -->
-        <div id="printContentMain" class="print-content-main align-center">
-          <h1 id="printHeading" class="page-heading">Hello, World!</h1>
-          <div id="printDivider" class="divider-line"></div>
-          <p id="printSubtitle" class="page-subtitle">Simple, beautiful & pixel-perfect A4 printable document.</p>
-          <div id="printBody" class="page-body">Welcome to this clean A4 printable document. Designed with exact physical paper dimensions (210mm × 297mm), standard typographical hierarchy, and customizable themes.
-
-Whether printing to physical paper or exporting to PDF via your browser's native print engine, this template guarantees crisp vector rendering and exact margins.</div>
-
-          <!-- Signature & Meta Block -->
-          <div class="print-meta-block">
-            <div class="meta-item">
-              <div class="fw-semibold" id="printSender">Designed with HTML5 & Bootstrap 5.3</div>
-              <div class="text-muted small">A4 Page Static Layout</div>
-            </div>
-            <div class="meta-item text-end">
-              <div class="signature-line ms-auto"></div>
-              <div class="small fw-semibold" id="printDate">August 2026</div>
-            </div>
+        <!-- LEFT SIDEBAR -->
+        <aside class="cv-sidebar">
+          
+          <!-- Circular Profile Headshot -->
+          <div class="profile-photo-wrapper">
+            <img src="./src/assets/images/profile_headshot_1785844646746.jpg" alt="Naimur Rahman" referrerPolicy="no-referrer" />
           </div>
-        </div>
 
-        <!-- Printable Footer -->
-        <div id="printFooter" class="print-footer">
-          <span>Hello World Printable Website</span>
-          <span>Page 1 of 1</span>
-        </div>
+          <!-- Contact Section -->
+          <div class="sb-section-header">
+            <div class="sb-icon-circle"><i class="bi bi-person-fill"></i></div>
+            <span class="sb-title">Contact</span>
+          </div>
+          <div class="sb-divider"></div>
+
+          <div class="sb-contact-item">
+            <div class="sb-contact-label"><i class="bi bi-telephone-fill me-1"></i> Phone</div>
+            <div class="sb-contact-val">01771092543</div>
+          </div>
+
+          <div class="sb-contact-item">
+            <div class="sb-contact-label"><i class="bi bi-envelope-fill me-1"></i> Email</div>
+            <div class="sb-contact-val">naimurr183@gmail.com</div>
+          </div>
+
+          <div class="sb-contact-item">
+            <div class="sb-contact-label"><i class="bi bi-geo-alt-fill me-1"></i> Address</div>
+            <div class="sb-contact-val">Road- 02, Block- G,<br />Mirpur-2, Dhaka- 1216</div>
+          </div>
+
+
+          <!-- Education Section -->
+          <div class="sb-section-header">
+            <div class="sb-icon-circle"><i class="bi bi-mortarboard-fill"></i></div>
+            <span class="sb-title">Education</span>
+          </div>
+          <div class="sb-divider"></div>
+
+          <div class="sb-edu-item">
+            <span class="sb-edu-year">2025</span>
+            <div class="sb-edu-degree">B.Sc. in Textile Engineering (Apparel)</div>
+            <div class="sb-edu-inst">City University</div>
+            <div class="sb-edu-sub">CGPA: 3.19</div>
+          </div>
+
+          <div class="sb-edu-item">
+            <span class="sb-edu-year">2020</span>
+            <div class="sb-edu-degree">Higher Secondary Certificate (HSC)</div>
+            <div class="sb-edu-inst">Sristi College of Tangail</div>
+            <div class="sb-edu-inst">Dhaka Board • Science Group</div>
+            <div class="sb-edu-sub">GPA: 4.33 out of 5.00</div>
+          </div>
+
+          <div class="sb-edu-item">
+            <span class="sb-edu-year">2018</span>
+            <div class="sb-edu-degree">Secondary School Certificate (SSC)</div>
+            <div class="sb-edu-inst">Jadunath Pilot High School and College</div>
+            <div class="sb-edu-inst">Dhaka Board • Science Group</div>
+            <div class="sb-edu-sub">GPA: 4.22 out of 5.00</div>
+          </div>
+
+
+          <!-- Skills Section -->
+          <div class="sb-section-header">
+            <div class="sb-icon-circle"><i class="bi bi-gear-fill"></i></div>
+            <span class="sb-title">Skills</span>
+          </div>
+          <div class="sb-divider"></div>
+
+          <ul class="sb-skills-list">
+            <li>Microsoft Word</li>
+            <li>Microsoft Excel</li>
+            <li>Microsoft PowerPoint</li>
+            <li>Internet Browsing</li>
+            <li>Basic Documentation</li>
+            <li>Report Preparation</li>
+            <li>Data Management</li>
+            <li>Quick Learner</li>
+          </ul>
+
+
+          <!-- Leadership Section -->
+          <div class="sb-section-header">
+            <div class="sb-icon-circle"><i class="bi bi-star-fill"></i></div>
+            <span class="sb-title">Leadership</span>
+          </div>
+          <div class="sb-divider"></div>
+
+          <div class="mb-2">
+            <div class="sb-lead-title">Vice President</div>
+            <div class="sb-lead-sub">City University Textile Club</div>
+            <div class="sb-lead-date">2024 - 2025</div>
+          </div>
+
+
+          <!-- Language Section -->
+          <div class="sb-section-header">
+            <div class="sb-icon-circle"><i class="bi bi-globe"></i></div>
+            <span class="sb-title">Language</span>
+          </div>
+          <div class="sb-divider"></div>
+
+          <div class="sb-lang-row">
+            <span class="fw-semibold">Bengali</span>
+            <span>Native</span>
+          </div>
+          <div class="sb-lang-row">
+            <span class="fw-semibold">English</span>
+            <span>Good</span>
+          </div>
+
+        </aside>
+
+        <!-- RIGHT MAIN COLUMN -->
+        <article class="cv-main">
+          
+          <!-- Header Name & Subheading -->
+          <header>
+            <h1 class="main-header-name">NAIMUR RAHMAN</h1>
+            <div class="main-header-tag">TEXTILE ENGINEERING (APPAREL) GRADUATE</div>
+            <div class="main-header-line"></div>
+          </header>
+
+          <!-- Summary Paragraph -->
+          <p class="main-summary-text">
+            Motivated and detail-oriented B.Sc. in Textile Engineering (Apparel) graduate with a strong academic foundation in apparel manufacturing, garment production processes, and quality standards. Experienced in student leadership as Vice President of the City University Textile Club, demonstrating excellent leadership, communication, event management, and teamwork skills. Passionate about contributing to the growth of the textile and apparel industry through continuous learning and professional excellence.
+          </p>
+
+          <!-- Experience Section -->
+          <section>
+            <div class="main-section-header">
+              <div class="main-icon-circle"><i class="bi bi-briefcase-fill"></i></div>
+              <h2 class="main-section-title">Experience</h2>
+              <div class="main-section-rule"></div>
+            </div>
+
+            <div class="timeline-container">
+              
+              <!-- Timeline Item 1 -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2025 – Present</div>
+                <div class="timeline-role">Seeking an Entry-Level Position</div>
+                <div class="timeline-desc">
+                  Actively seeking an opportunity to begin a professional career in the textile and apparel industry where I can apply my academic knowledge, learn from experienced professionals, and contribute to organizational success.
+                </div>
+              </div>
+
+              <!-- Timeline Item 2 -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020 – 2025</div>
+                <div class="timeline-role">Academic Projects & Training</div>
+                <ul class="timeline-bullets">
+                  <li>Completed academic projects on apparel manufacturing and production processes.</li>
+                  <li>Participated in workshops and industrial programs related to textile engineering.</li>
+                  <li>Gained knowledge on fabric properties, garment construction, quality control, and production planning.</li>
+                </ul>
+              </div>
+
+              <!-- Timeline Item 3 -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2018 – 2020</div>
+                <div class="timeline-role">Volunteer & Community Activities</div>
+                <ul class="timeline-bullets">
+                  <li>Volunteered in social and community service events.</li>
+                  <li>Actively participated in university programs and cultural activities.</li>
+                  <li>Developed leadership, communication, and teamwork skills through various co-curricular involvements.</li>
+                </ul>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Extra-Curricular Activities Section -->
+          <section>
+            <div class="main-section-header">
+              <div class="main-icon-circle"><i class="bi bi-people-fill"></i></div>
+              <h2 class="main-section-title">Extra-Curricular Activities</h2>
+              <div class="main-section-rule"></div>
+            </div>
+
+            <ul class="simple-bullet-list">
+              <li>Active participation in various workshop, programs arranged by textile industries.</li>
+              <li>Working as a volunteer in different social events.</li>
+              <li>Voluntary work in university and community programs.</li>
+            </ul>
+          </section>
+
+          <!-- Personal Information Section -->
+          <section>
+            <div class="main-section-header">
+              <div class="main-icon-circle"><i class="bi bi-person-badge-fill"></i></div>
+              <h2 class="main-section-title">Personal Information</h2>
+              <div class="main-section-rule"></div>
+            </div>
+
+            <table class="personal-info-table">
+              <tr>
+                <td class="lbl">Father's Name</td>
+                <td class="col">:</td>
+                <td class="val">Abdul Kuddus Miah</td>
+              </tr>
+              <tr>
+                <td class="lbl">Mother's Name</td>
+                <td class="col">:</td>
+                <td class="val">Nasima Akter</td>
+              </tr>
+              <tr>
+                <td class="lbl">Date of Birth</td>
+                <td class="col">:</td>
+                <td class="val">01 October 2002</td>
+              </tr>
+              <tr>
+                <td class="lbl">Marital Status</td>
+                <td class="col">:</td>
+                <td class="val">Single</td>
+              </tr>
+              <tr>
+                <td class="lbl">Nationality</td>
+                <td class="col">:</td>
+                <td class="val">Bangladeshi</td>
+              </tr>
+              <tr>
+                <td class="lbl">Religion</td>
+                <td class="col">:</td>
+                <td class="val">Islam</td>
+              </tr>
+              <tr>
+                <td class="lbl">Blood Group</td>
+                <td class="col">:</td>
+                <td class="val">B+</td>
+              </tr>
+              <tr>
+                <td class="lbl">National ID</td>
+                <td class="col">:</td>
+                <td class="val">7813831968</td>
+              </tr>
+              <tr>
+                <td class="lbl">Permanent Address</td>
+                <td class="col">:</td>
+                <td class="val">Nagarpur, Tangail-1936, Bangladesh</td>
+              </tr>
+            </table>
+          </section>
+
+          <!-- Reference Section -->
+          <section>
+            <div class="main-section-header">
+              <div class="main-icon-circle"><i class="bi bi-person-lines-fill"></i></div>
+              <h2 class="main-section-title">Reference</h2>
+              <div class="main-section-rule"></div>
+            </div>
+
+            <div class="references-grid">
+              
+              <!-- Column 1 -->
+              <div class="ref-col">
+                <div class="ref-name">Jarin Yesmin</div>
+                <div class="ref-title">Assistant Professor</div>
+                <div class="ref-inst">City University</div>
+                <div class="ref-contact">
+                  <div><strong>Phone:</strong> 01771777582</div>
+                  <div><strong>Email:</strong> N/A</div>
+                </div>
+              </div>
+
+              <!-- Column 2 -->
+              <div class="ref-col">
+                <div class="ref-name">Abdullah Bin Atiq</div>
+                <div class="ref-title">Merchandiser</div>
+                <div class="ref-inst">East West Industrial Park</div>
+                <div class="ref-contact">
+                  <div><strong>Phone:</strong> 01790-418893</div>
+                  <div><strong>Email:</strong> atiq@eastwestindpark.com</div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+        </article>
 
       </div>
-
     </div>
-
   </main>
 
   <!-- Bootstrap 5.3 CDN JS Bundle -->
