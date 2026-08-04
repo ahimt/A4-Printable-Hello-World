@@ -1,0 +1,6 @@
+{
+  "name": "A4 Printable Hello World",
+  "description": "A pixel-perfect A4 page printable website built with HTML5, Bootstrap 5.3, CSS3, and Vanilla JS featuring live print controls, page customization, and PDF print optimization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
