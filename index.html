@@ -20,260 +20,61 @@
 </head>
 <body>
 
-  <!-- Screen Top Navbar -->
-  <header class="app-navbar d-flex align-items-center justify-content-between no-print">
-    <div class="d-flex align-items-center gap-3">
-      <div class="d-flex align-items-center gap-2">
-        <i class="bi bi-printer-fill text-primary fs-4"></i>
-        <span class="fw-bold text-white fs-5">Hello World <span class="text-primary">A4</span></span>
-      </div>
-      <span class="brand-badge d-none d-sm-inline-block">210 × 297 mm</span>
-    </div>
-
-    <!-- Quick Actions in Header -->
-    <div class="d-flex align-items-center gap-2">
-      <!-- Preset Selector -->
-      <div class="d-none d-md-flex align-items-center me-2">
-        <label for="selectPreset" class="text-light small me-2 mb-0 fw-semibold">Preset:</label>
-        <select id="selectPreset" class="form-select form-select-sm" style="width: 170px;">
-          <option value="minimal" selected>🌟 Minimal Hello World</option>
-          <option value="certificate">📜 Certificate / Diploma</option>
-          <option value="letterhead">✉️ Formal Letterhead</option>
-          <option value="poster">🎨 Bold Poster</option>
-        </select>
-      </div>
-
-      <!-- Zoom Controls -->
-      <div class="btn-group btn-group-sm me-2 d-none d-lg-flex" role="group">
-        <button id="btnZoomOut" class="btn btn-outline-secondary text-light" title="Zoom Out"><i class="bi bi-zoom-out"></i></button>
-        <button id="btnZoomReset" class="btn btn-outline-secondary text-light px-2" title="Reset Zoom"><span id="zoomLevelText">85%</span></button>
-        <button id="btnZoomIn" class="btn btn-outline-secondary text-light" title="Zoom In"><i class="bi bi-zoom-in"></i></button>
-      </div>
-
-      <!-- Print Button -->
-      <button id="btnPrintNav" class="btn btn-primary btn-sm d-flex align-items-center gap-2 px-3 fw-semibold">
-        <i class="bi bi-printer"></i>
-        <span>Print / Save PDF</span>
-        <span class="key-badge d-none d-xl-inline-block ms-1">Ctrl+P</span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Main Viewport Layout -->
-  <div class="d-flex flex-column flex-lg-row">
+  <!-- Pure A4 Page Viewport Layout -->
+  <main class="workspace-stage">
     
-    <!-- Left Editor Sidebar -->
-    <aside class="editor-sidebar no-print p-3">
+    <!-- Scale Wrapper for A4 Page -->
+    <div id="pageScaleWrapper" class="page-scale-wrapper">
       
-      <!-- Nav Tabs -->
-      <ul class="nav nav-tabs nav-tabs-custom mb-3" id="editorTabs" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="content-tab" data-bs-toggle="tab" data-bs-target="#content-pane" type="button" role="tab"><i class="bi bi-pencil-square me-1"></i> Content</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="style-tab" data-bs-toggle="tab" data-bs-target="#style-pane" type="button" role="tab"><i class="bi bi-palette me-1"></i> Design & Layout</button>
-        </li>
-      </ul>
-
-      <!-- Tab Contents -->
-      <div class="tab-content" id="editorTabsContent">
+      <!-- A4 Page Container -->
+      <div id="a4Page" class="a4-page font-serif size-md">
         
-        <!-- Tab 1: Content Editor -->
-        <div class="tab-pane fade show active" id="content-pane" role="tabpanel">
-          
-          <div class="mb-3">
-            <label for="inputHeading" class="form-label">Main Title / Heading</label>
-            <input type="text" id="inputHeading" class="form-control" value="Hello, World!" placeholder="e.g. Hello, World!" />
-          </div>
+        <!-- Watermark Overlay -->
+        <div id="printWatermark" class="watermark-overlay" style="display: none;">DRAFT</div>
 
-          <div class="mb-3">
-            <label for="inputSubtitle" class="form-label">Subtitle / Tagline</label>
-            <input type="text" id="inputSubtitle" class="form-control" value="Simple, beautiful & pixel-perfect A4 printable document." placeholder="e.g. Subtitle here" />
-          </div>
-
-          <div class="mb-3">
-            <label for="inputBody" class="form-label">Message Body</label>
-            <textarea id="inputBody" class="form-control" rows="5" placeholder="Enter paragraph text...">Welcome to this clean A4 printable document. Designed with exact physical paper dimensions (210mm × 297mm), standard typographical hierarchy, and customizable themes.
-
-Whether printing to physical paper or exporting to PDF via your browser's native print engine, this template guarantees crisp vector rendering and exact margins.</textarea>
-          </div>
-
-          <div class="row g-2 mb-3">
-            <div class="col-6">
-              <label for="inputSender" class="form-label">Author / Signature</label>
-              <input type="text" id="inputSender" class="form-control" value="Designed with Vanilla JS & Bootstrap 5.3" />
-            </div>
-            <div class="col-6">
-              <label for="inputDate" class="form-label">Date</label>
-              <input type="text" id="inputDate" class="form-control" placeholder="August 2026" />
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label for="inputFooter" class="form-label">Footer Note</label>
-            <input type="text" id="inputFooter" class="form-control" value="Page 1 of 1 • A4 Printable Document" />
-          </div>
-
-          <div class="mb-3">
-            <label for="inputWatermark" class="form-label">Watermark Text (Optional)</label>
-            <input type="text" id="inputWatermark" class="form-control" value="" placeholder="e.g. DRAFT or CONFIDENTIAL" />
-          </div>
-
+        <!-- Printable Header -->
+        <div class="print-header">
+          <div class="print-brand-title"><i class="bi bi-globe2 me-1"></i> Hello World • Printable A4</div>
         </div>
 
-        <!-- Tab 2: Design & Layout -->
-        <div class="tab-pane fade" id="style-pane" role="tabpanel">
-          
-          <!-- Typography -->
-          <div class="mb-3">
-            <label for="selectFont" class="form-label">Font Family</label>
-            <select id="selectFont" class="form-select">
-              <option value="font-serif" selected>Playfair Display (Serif / Elegance)</option>
-              <option value="font-sans">Plus Jakarta Sans (Modern Clean)</option>
-              <option value="font-display">Cinzel (Classic Display / Diploma)</option>
-              <option value="font-mono">JetBrains Mono (Technical / Code)</option>
-            </select>
-          </div>
-
-          <div class="row g-2 mb-3">
-            <div class="col-6">
-              <label for="selectFontSize" class="form-label">Heading Scale</label>
-              <select id="selectFontSize" class="form-select">
-                <option value="size-sm">Small (36px)</option>
-                <option value="size-md" selected>Medium (52px)</option>
-                <option value="size-lg">Large (72px)</option>
-                <option value="size-hero">Hero (88px)</option>
-              </select>
-            </div>
-            <div class="col-6">
-              <label for="selectAlign" class="form-label">Text Alignment</label>
-              <select id="selectAlign" class="form-select">
-                <option value="left" selected>Left</option>
-                <option value="center">Center</option>
-                <option value="right">Right</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Color Themes -->
-          <div class="mb-4">
-            <label class="form-label d-block mb-2">Color Palette Theme</label>
-            <div class="d-flex align-items-center gap-2">
-              <button class="color-swatch-btn active" style="background-color: #1e293b;" data-primary="#1e293b" data-secondary="#475569" data-accent="#2563eb" data-border="#cbd5e1" title="Midnight Onyx"></button>
-              <button class="color-swatch-btn" style="background-color: #064e3b;" data-primary="#064e3b" data-secondary="#047857" data-accent="#059669" data-border="#a7f3d0" title="Deep Emerald"></button>
-              <button class="color-swatch-btn" style="background-color: #1e3a8a;" data-primary="#1e3a8a" data-secondary="#1d4ed8" data-accent="#3b82f6" data-border="#bfdbfe" title="Royal Navy"></button>
-              <button class="color-swatch-btn" style="background-color: #701a75;" data-primary="#701a75" data-secondary="#a21caf" data-accent="#d946ef" data-border="#f5d0fe" title="Vintage Plum"></button>
-              <button class="color-swatch-btn" style="background-color: #881337;" data-primary="#881337" data-secondary="#be123c" data-accent="#f43f5e" data-border="#fecdd3" title="Crimson Rose"></button>
-            </div>
-          </div>
-
-          <!-- Margins & Frame -->
-          <div class="row g-2 mb-3">
-            <div class="col-6">
-              <label for="selectMargin" class="form-label">Page Margins</label>
-              <select id="selectMargin" class="form-select">
-                <option value="compact">Compact (10mm)</option>
-                <option value="standard" selected>Standard (20mm)</option>
-                <option value="generous">Generous (30mm)</option>
-              </select>
-            </div>
-            <div class="col-6">
-              <label for="selectFrame" class="form-label">Border Frame</label>
-              <select id="selectFrame" class="form-select">
-                <option value="none" selected>None</option>
-                <option value="frame-subtle">Subtle Line</option>
-                <option value="frame-double">Double Line</option>
-                <option value="frame-ornate">Ornate Border</option>
-                <option value="frame-corners">Corner Accents</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Grid Overlay Checkbox -->
-          <div class="form-check form-switch mt-3">
-            <input class="form-check-input" type="checkbox" id="toggleGrid" />
-            <label class="form-check-label text-dark small fw-medium" for="toggleGrid">
-              <i class="bi bi-grid-3x3 me-1"></i> Show Alignment Ruler Grid (Screen Only)
-            </label>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- Quick Print CTA -->
-      <div class="mt-4 pt-3 border-top">
-        <button id="btnPrint" class="btn btn-primary w-full w-100 py-2 fw-semibold d-flex align-items-center justify-content-center gap-2">
-          <i class="bi bi-printer-fill fs-5"></i>
-          <span>Print or Save to PDF</span>
-        </button>
-      </div>
-
-    </aside>
-
-    <!-- Main Workspace Stage (Paper View) -->
-    <main class="workspace-stage">
-      
-      <!-- Scale Wrapper for A4 Page -->
-      <div id="pageScaleWrapper" class="page-scale-wrapper">
-        
-        <!-- A4 Page Container -->
-        <div id="a4Page" class="a4-page font-serif size-md">
-          
-          <!-- Watermark Overlay -->
-          <div id="printWatermark" class="watermark-overlay" style="display: none;">DRAFT</div>
-
-          <!-- Printable Header -->
-          <div class="print-header">
-            <div class="print-brand-title"><i class="bi bi-globe2 me-1"></i> Hello World • Printable A4</div>
-          </div>
-
-          <!-- Main Printable Content -->
-          <div id="printContentMain" class="print-content-main align-center">
-            <h1 id="printHeading" class="page-heading">Hello, World!</h1>
-            <div id="printDivider" class="divider-line"></div>
-            <p id="printSubtitle" class="page-subtitle">Simple, beautiful & pixel-perfect A4 printable document.</p>
-            <div id="printBody" class="page-body">Welcome to this clean A4 printable document. Designed with exact physical paper dimensions (210mm × 297mm), standard typographical hierarchy, and customizable themes.
+        <!-- Main Printable Content -->
+        <div id="printContentMain" class="print-content-main align-center">
+          <h1 id="printHeading" class="page-heading">Hello, World!</h1>
+          <div id="printDivider" class="divider-line"></div>
+          <p id="printSubtitle" class="page-subtitle">Simple, beautiful & pixel-perfect A4 printable document.</p>
+          <div id="printBody" class="page-body">Welcome to this clean A4 printable document. Designed with exact physical paper dimensions (210mm × 297mm), standard typographical hierarchy, and customizable themes.
 
 Whether printing to physical paper or exporting to PDF via your browser's native print engine, this template guarantees crisp vector rendering and exact margins.</div>
 
-            <!-- Signature & Meta Block -->
-            <div class="print-meta-block">
-              <div class="meta-item">
-                <div class="fw-semibold" id="printSender">Designed with Vanilla JS & Bootstrap 5.3</div>
-                <div class="text-muted small">A4 Page Static Layout</div>
-              </div>
-              <div class="meta-item text-end">
-                <div class="signature-line ms-auto"></div>
-                <div class="small fw-semibold" id="printDate">August 2026</div>
-              </div>
+          <!-- Signature & Meta Block -->
+          <div class="print-meta-block">
+            <div class="meta-item">
+              <div class="fw-semibold" id="printSender">Designed with HTML5 & Bootstrap 5.3</div>
+              <div class="text-muted small">A4 Page Static Layout</div>
+            </div>
+            <div class="meta-item text-end">
+              <div class="signature-line ms-auto"></div>
+              <div class="small fw-semibold" id="printDate">August 2026</div>
             </div>
           </div>
+        </div>
 
-          <!-- Printable Footer -->
-          <div id="printFooter" class="print-footer">
-            <span>Hello World Printable Website</span>
-            <span>Page 1 of 1</span>
-          </div>
-
+        <!-- Printable Footer -->
+        <div id="printFooter" class="print-footer">
+          <span>Hello World Printable Website</span>
+          <span>Page 1 of 1</span>
         </div>
 
       </div>
 
-    </main>
+    </div>
 
-  </div>
-
-  <!-- Page Overflow & Fit Status Indicator Bar -->
-  <div id="overflowStatus" class="overflow-status-bar no-print">
-    <div id="statusIndicator" class="status-indicator valid"></div>
-    <span id="statusText" class="text-light fw-medium">✓ Fits 1 A4 Page Perfectly</span>
-  </div>
+  </main>
 
   <!-- Bootstrap 5.3 CDN JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
   <!-- Custom Vanilla JS Application Logic -->
-  <script src="./js/app.js"></script>
+  <script type="module" src="./js/app.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
  * Standard HTML5 + Bootstrap 5.3 CDN + CSS3 + Vanilla JS
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   // --- DOM Element References ---
   const a4Page = document.getElementById('a4Page');
   const pageScaleWrapper = document.getElementById('pageScaleWrapper');
@@ -327,4 +327,10 @@ document.addEventListener('DOMContentLoaded', () => {
       triggerPrint();
     }
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}

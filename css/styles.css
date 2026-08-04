@@ -162,16 +162,18 @@ body {
   border-color: #1557b0 !important;
 }
 
-/* Stage Area (Canvas for paper preview) - High Density PDF Viewer Stage */
+/* Stage Area (Canvas for paper preview) - Full Page A4 Viewer */
 .workspace-stage {
   flex: 1;
-  height: calc(100vh - 48px);
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
   overflow: auto;
   background-color: #525659;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px;
+  padding: 32px 16px;
   position: relative;
 }
 
